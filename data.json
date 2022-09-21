@@ -22,7 +22,9 @@
         "gui":"in case u don't like terminals",
         "contact":"feel free to reach out",
         "pwd":"display present working directory",
-        "echo":"display whatever u type"
+        "echo":"display whatever u type",
+        "Up Arrow":"go back to the previous command",
+        "Down Arrow":"go to the next command from a particular command history"
     },
     "projects":{
         "Algorithm Visualiser":{
