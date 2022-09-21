@@ -334,7 +334,7 @@ const switchfunc = (cmd)=>{
                 inputVal=null;
                 break;
             case 'cv':
-                downloadURI('./DebayanPradhan.pdf','Debayan Pradhan - CV')
+                downloadURI('./assets/DebayanPradhan.pdf','Debayan Pradhan - CV')
                 inputVal=null;
                 break;
             case 'projects':
