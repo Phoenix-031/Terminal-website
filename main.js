@@ -2,7 +2,7 @@
 
 let inputVal=null
 let Cmdhistory = []
-
+let pointer = 0
 
 const topbanner = `
 ____  __                     _     
@@ -77,8 +77,8 @@ const helpdsiplay = ()=>{
             `)
 
             ulist.append(ele)    
-            await sleep(50)
             display.scrollIntoView({behavior:"smooth"})
+            await sleep(50)
             // display.append(ele)
         }
 
@@ -396,14 +396,30 @@ const inputEvent = (e)=>{
 const keydownEvent = (e)=>{
     if(e.key === "Enter"){
 
-        if(inputVal !== null)
-           Cmdhistory.push(inputVal)
+        if(inputVal !== null){
+            Cmdhistory.push(inputVal)
+            pointer++;
+        }
         terminalContent.removeChild(terminalContent.lastChild)
         terminalContent.append(inserttermrecord())
 
         switchfunc(inputVal)
         terminalinpfunc()
 
+    }
+    else if(e.key === 'ArrowUp'){
+        if(pointer> 0){
+            document.querySelector('.terminal-input').value = Cmdhistory[pointer-1]
+            pointer--;
+            // console.log(pointer)
+        }
+    }
+    else if(e.key === 'ArrowDown'){
+        if(pointer+1 <= Cmdhistory.length-1){
+            document.querySelector('.terminal-input').value = Cmdhistory[pointer+1]
+            pointer++;
+            // console.log(pointer)
+        }
     }
 }
 
