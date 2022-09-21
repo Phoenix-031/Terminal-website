@@ -1,0 +1,59 @@
+{
+    "socials":{
+        "linkedin" : "https://www.linkedin.com/in/debayan-pradhan-b138641b4/",
+        "twitter":"https://twitter.com/m4lw4r3_01",
+        "github":"https://github.com/Phoenix-031"
+    },
+    "help":{
+        "whoami":"Well you are just a visitor here ya know",
+        "about":"Know about me",
+        "socials":"Find all my socials listed",
+        "clear":"clear terminal",
+        "projects":"have a look at my projects",
+        "banner":"Display banner",
+        "history":"command history",
+        "twitter":"opens twitter",
+        "github":"opens github",
+        "linkedin":"open linkedin",
+        "cv":"check out my CV",
+        "gui":"in case u don't like terminals",
+        "contact":"feel free to reach out",
+        "pwd":"display present working directory",
+        "echo":"display whatever u type"
+    },
+    "projects":{
+        "Algorithm Visualiser":{
+            "link":"",
+            "description":"Algorithm visualiser with python"
+        },
+        "Password manager":{
+            "link":"",
+            "description":"Password manager with python,offiline,cryptography,password security,UI"
+        },
+        "Music Player":{
+            "link":"https://phoenix-031.github.io/Js_projects/music_player",
+            "description":"Js music player"
+        },
+        "To-do list":{
+            "link":"https://phoenix-031.github.io/Js_projects/tdo-list",
+            "description":"To do list in javascript"
+        },
+        "E-Bakery":{
+            "link":"https://shiny-cannoli-e4333b.netlify.app/",
+            "description":"Fullstack project website for bakery,Hackathon project,frontend (htm,css,js),backend(nodej,mongodb,express)"
+        },
+        "CRUD APP":{
+            "link":"",
+            "description":"Mern stack crud application"
+        },
+        "linktree clone":{
+            "link":"https://phoenix-031.github.io/Web_Projects/link_tree_clone/index.html",
+            "description":"linktree with html,css,js"
+        }
+    },
+    "contact":{
+        "Email":"mailto:pradhandebayan@gmail.com",
+        "Linkedin":"https://www.linkedin.com/in/debayan-pradhan-b138641b4/",
+        "twitter":"https://twitter.com/m4lw4r3_01"
+    }
+}
