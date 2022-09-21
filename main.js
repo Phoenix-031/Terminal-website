@@ -94,23 +94,44 @@ const helpdsiplay = ()=>{
 const sociallinks = ()=>{
     const social = document.createElement('div')
     social.classList.add('terminal-command-output')
+    terminalContent.append(social)
+
 
     fetch('./data.json')
     .then(res=>res.json())
-    .then(data=>{
+    .then(async data=>{
 
-        social.innerHTML = (`
-        <ul>
-        <li><span id="spantxt"><a id="spantxt" href = https://www.linkedin.com/in/debayan-pradhan-b138641b4/" target="_blank">LinkedIn</a></span><span id="spandd">${data.socials.linkedin}</span></li>
-        <li><span id="spantxt"><a id="spantxt" href = "https://twitter.com/m4lw4r3_01" target="_blank">Twitter</span></a><span id="spandd">${data.socials.twitter}</span></li>
-        <li><span id="spantxt"><a id="spantxt" href = "https://github.com/Phoenix-031" target="_blank">Github</span></a><span id="spandd">${data.socials.github}</span></li>
-        </ul>
+        const val = data.socials
 
-        `)
+        const ulist = document.createElement('ul')
+        social.append(ulist)
+
+        
+        for(let key in val){
+            const ele = document.createElement('li')
+            ele.innerHTML = (`
+            <span id="spantxt">${key}</span><span id="spandd"><a id="spantxt" href = "${val[key]}" target="_blank" style = "color:#788e1b">${val[key]}</a></span>
+            `)
+
+            ulist.append(ele)    
+            await sleep(50)
+            social.scrollIntoView()
+        }
+
+
+
+        // social.innerHTML = (`
+        // <ul>
+        // <li><span id="spantxt"><a id="spantxt" href = https://www.linkedin.com/in/debayan-pradhan-b138641b4/" target="_blank">LinkedIn</a></span><span id="spandd">${data.socials.linkedin}</span></li>
+        // <li><span id="spantxt"><a id="spantxt" href = "https://twitter.com/m4lw4r3_01" target="_blank">Twitter</span></a><span id="spandd">${data.socials.twitter}</span></li>
+        // <li><span id="spantxt"><a id="spantxt" href = "https://github.com/Phoenix-031" target="_blank">Github</span></a><span id="spandd">${data.socials.github}</span></li>
+        // </ul>
+
+        // `)
       
         social.scrollIntoView()
     })
-    terminalContent.append(social)
+    // terminalContent.append(social)
 }
 
 
