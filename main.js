@@ -78,12 +78,12 @@ const helpdsiplay = ()=>{
 
             ulist.append(ele)    
             await sleep(50)
-            display.scrollIntoView()
+            display.scrollIntoView({behavior:"smooth"})
             // display.append(ele)
         }
 
         // display.append(ulist)
-        display.scrollIntoView()
+        display.scrollIntoView({behavior:"smooth"})
     })
 
     // terminalContent.append(display)
@@ -115,7 +115,7 @@ const sociallinks = ()=>{
 
             ulist.append(ele)    
             await sleep(50)
-            social.scrollIntoView()
+            social.scrollIntoView({behavior:"smooth"})
         }
 
 
@@ -129,7 +129,7 @@ const sociallinks = ()=>{
 
         // `)
       
-        social.scrollIntoView()
+        social.scrollIntoView({behavior:"smooth"})
     })
     // terminalContent.append(social)
 }
@@ -145,7 +145,7 @@ const historydisplay = async ()=>{
 
         display.append(p)
         await sleep(50)
-        display.scrollIntoView()
+        display.scrollIntoView({behavior:"smooth"})
     }
 }
 
@@ -244,11 +244,11 @@ const displayprojects = ()=>{
             `)
 
             await sleep(50)
-            display.scrollIntoView()
+            display.scrollIntoView({behavior:"smooth"})
             display.append(nw)
         }
         
-        display.scrollIntoView()
+        display.scrollIntoView({behavior:"smooth"})
     })
 
     // return display
@@ -272,11 +272,11 @@ const displaycontact = ()=>{
             `)
 
             await sleep(50)
-            display.scrollIntoView()
+            display.scrollIntoView({behavior:"smooth"})
             display.append(nw)
         }
         
-        display.scrollIntoView()
+        display.scrollIntoView({behavior:"smooth"})
     })
 
     // return display
