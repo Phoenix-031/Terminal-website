@@ -54,16 +54,21 @@ const terminalinpfunc = ()=>{
 }
 
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 const helpdsiplay = ()=>{
     const display = document.createElement('div')
     display.classList.add('terminal-command-output')
     fetch('./data.json')
     .then(res=>res.json())
-    .then(data=>{
+    .then(async data=>{
 
         const val = data.help
         const ulist = document.createElement('ul')
+        display.append(ulist)
         
         for(let key in val){
             const ele = document.createElement('li')
@@ -71,10 +76,13 @@ const helpdsiplay = ()=>{
             <span id="spantxt">${key}</span><span id="spandd">${val[key]}</span>
             `)
 
-            ulist.append(ele)
+            ulist.append(ele)    
+            await sleep(50)
+            display.scrollIntoView()
+            // display.append(ele)
         }
 
-        display.append(ulist)
+        // display.append(ulist)
         display.scrollIntoView()
     })
 
@@ -202,7 +210,7 @@ const displayprojects = ()=>{
     display.classList.add('terminal-command-output') 
     fetch('./data.json')
     .then(res=>res.json())
-    .then(data=>{
+    .then(async data=>{
         const val = data.projects
         for(let key in val){
             const nw = document.createElement('div')
@@ -212,6 +220,8 @@ const displayprojects = ()=>{
             <span id="projectdd">${val[key].description}</span>
             `)
 
+            await sleep(50)
+            display.scrollIntoView()
             display.append(nw)
         }
         
@@ -228,7 +238,7 @@ const displaycontact = ()=>{
 
     fetch('./data.json')
     .then(res=>res.json())
-    .then(data=>{
+    .then(async data=>{
         const val = data.contact
         for(let key in val){
             const nw = document.createElement('div')
@@ -238,6 +248,8 @@ const displaycontact = ()=>{
             <a class="linkKey" href = "${val[key]}" target="_blank"}"><span link="mailto:pradhandebayan@gmail.com">${val[key]}</span></a>
             `)
 
+            await sleep(50)
+            display.scrollIntoView()
             display.append(nw)
         }
         
