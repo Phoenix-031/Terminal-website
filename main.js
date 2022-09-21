@@ -410,6 +410,7 @@ const keydownEvent = (e)=>{
     else if(e.key === 'ArrowUp'){
         if(pointer> 0){
             document.querySelector('.terminal-input').value = Cmdhistory[pointer-1]
+            inputVal = Cmdhistory[pointer-1];
             pointer--;
             // console.log(pointer)
         }
@@ -417,6 +418,7 @@ const keydownEvent = (e)=>{
     else if(e.key === 'ArrowDown'){
         if(pointer+1 <= Cmdhistory.length-1){
             document.querySelector('.terminal-input').value = Cmdhistory[pointer+1]
+            inputVal = Cmdhistory[pointer+1]
             pointer++;
             // console.log(pointer)
         }
