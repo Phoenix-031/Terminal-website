@@ -114,16 +114,18 @@ const sociallinks = ()=>{
 }
 
 
-const historydisplay = ()=>{
+const historydisplay = async ()=>{
     const display = document.createElement('div')
     display.classList.add('terminal-command-output')
+    terminalContent.append(display)
     for(let i =0;i<Cmdhistory.length;i++){
         const p = document.createElement('p')
         p.innerHTML = (`${Cmdhistory[i]}`)
-        display.append(p)
-    }
 
-    terminalContent.append(display)
+        display.append(p)
+        await sleep(50)
+        display.scrollIntoView()
+    }
 }
 
 const clearterminal = ()=>{
