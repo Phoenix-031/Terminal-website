@@ -134,8 +134,10 @@ const historydisplay = async ()=>{
 
         display.append(p)
         await sleep(50)
-        display.scrollIntoView({behavior:"smooth"})
+        display.scrollIntoView()
     }
+
+    display.scrollIntoView()
 }
 
 const clearterminal = ()=>{
@@ -241,6 +243,7 @@ const displayprojects = ()=>{
     })
 
     // return display
+    display.scrollIntoView()
     terminalContent.append(display)
 }
 
@@ -269,6 +272,7 @@ const displaycontact = ()=>{
     })
 
     // return display
+    display.scrollIntoView()
     terminalContent.append(display)
 }
 
