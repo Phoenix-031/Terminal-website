@@ -23,6 +23,7 @@
         "contact":"feel free to reach out",
         "pwd":"display present working directory",
         "echo":"display whatever u type",
+        "themes":"set the theme of the terminal",
         "Up Arrow":"go back to the previous command",
         "Down Arrow":"go to the next command from a particular command history"
     },
@@ -60,5 +61,6 @@
         "Email":"mailto:pradhandebayan@gmail.com",
         "Linkedin":"https://www.linkedin.com/in/debayan-pradhan-b138641b4/",
         "twitter":"https://twitter.com/m4lw4r3_01"
-    }
+    },
+    "themes":["dark","dracula","ubuntu","default"]
 }

@@ -5,13 +5,28 @@
     box-sizing: border-box;
 }
 
+:root{
+    --main-bgcolor:#0d1117;
+    --terminal-banner-1:#daff0d;
+    --terminal-prompt-1:green;
+    --terminal-cmd-output1:#519975;
+    --terminal-cmd-output-ul1:rgb(231, 159, 15);
+    --terminal-type1:#dfb06e;
+    --about-p1:#80d932;
+    --not-found-1:rgb(205, 42, 42);
+    --not-found-p:floralwhite;
+    --project-col1:#13dbff;
+    --span-col1:#519975;
+    --text-sh-col1:#73abad;
+}
+
 body{
     width: 100%;
     height: 100%;
 }
 
 #terminal{
-    background-color: #0d1117;
+    background-color: var(--main-bgcolor);
     width: 100%;
     height: 100%;
     overflow-y: scroll;
@@ -31,7 +46,7 @@ body{
 
 .terminalbanner pre{
     font-size: 1rem;
-    color: #daff0d;
+    color: var(--terminal-banner-1);
     transition: all 0.3s ease-in;
 }
 
@@ -47,7 +62,7 @@ body{
 
 .terminal-prompt{
     /* border: 1px solid white; */
-    color: green;
+    color: var(--terminal-prompt-1);
     font-weight: bold;
     font-style: oblique;
     font-size: 1.1rem;
@@ -73,8 +88,8 @@ body{
 .terminal-command-output{
     font-size: 1.2rem;
     line-height: 2rem;
-    color: #519975;
-    text-shadow: 0 0 5px #73abad;
+    color: var(--terminal-cmd-output1);
+    text-shadow: 0 0 5px var(--text-sh-col1);
     display: flex;
     flex-direction: column;
     /* gap: 1rem; */
@@ -82,7 +97,7 @@ body{
 
 .terminal-command-output ul{
     list-style: none;
-    color: rgb(231, 159, 15);
+    color: var(--terminal-cmd-output-ul1);
     margin: 1rem;
 }
 
@@ -94,19 +109,19 @@ body{
 .terminal-cmd{
     font-size: 1.2rem;
     font-weight: bold;
-    color: #dfb06e;
+    color: car(--terminal-type1);
 }
 
 #spantxt{
     flex: 1;
-    text-shadow: 0 0 5px #73abad;
-    color: #519975;
+    text-shadow: 0 0 5px var(--text-sh-col1);
+    color: var(--span-col1);
     text-decoration: none;
 }
 
 #spandd{
     flex: 3;
-    text-shadow: 0 0 5px #73abad;
+    text-shadow: 0 0 5px var(--text-sh-col1);
 }
 
 .terminal-command-output-about{
@@ -118,12 +133,12 @@ body{
 
 p{
     line-height: 2rem;
-    color: #788e1b;
+    color: var(--about-p1);
     font-family: 'Source Serif Pro', serif;
 }
 
 .not-found{
-    color: rgb(205, 42, 42);
+    color: var(--not-found-1);
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     margin-top: 1rem;
@@ -134,13 +149,13 @@ p{
 }
 
 .not-found p{
-    color: floralwhite;
+    color: var(--not-found-p);
     font-family: 'Poppins',sans-serif;
     
 }
 
 .projectKey{
-    color: #13dbff;
+    color: var(--project-col1);
     font-size: 1rem;
     font-family: 'Poppins',sans-serif;
     text-shadow: none;
@@ -161,8 +176,6 @@ p{
 
 .linkKey{
     flex: 5;
-    /* text-shadow: none; */
     font-family: 'Poppins',sans-serif;
-    color: #788e1b;
-
+    color: var(--about-p1);
 }

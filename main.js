@@ -118,17 +118,6 @@ const sociallinks = ()=>{
             social.scrollIntoView({behavior:"smooth"})
         }
 
-
-
-        // social.innerHTML = (`
-        // <ul>
-        // <li><span id="spantxt"><a id="spantxt" href = https://www.linkedin.com/in/debayan-pradhan-b138641b4/" target="_blank">LinkedIn</a></span><span id="spandd">${data.socials.linkedin}</span></li>
-        // <li><span id="spantxt"><a id="spantxt" href = "https://twitter.com/m4lw4r3_01" target="_blank">Twitter</span></a><span id="spandd">${data.socials.twitter}</span></li>
-        // <li><span id="spantxt"><a id="spantxt" href = "https://github.com/Phoenix-031" target="_blank">Github</span></a><span id="spandd">${data.socials.github}</span></li>
-        // </ul>
-
-        // `)
-      
         social.scrollIntoView({behavior:"smooth"})
     })
     // terminalContent.append(social)
@@ -284,6 +273,42 @@ const displaycontact = ()=>{
 }
 
 
+const displaythemes = ()=>{
+
+    const display = document.createElement('div')
+    display.classList.add('terminal-command-output');
+    terminalContent.append(display)
+    display.style.marginTop = "1rem"
+    
+    fetch('./data.json')
+     .then(res=>res.json())
+     .then(async data =>{
+        const val = data.themes;
+
+        for(let i=0;i<val.length;i++){
+            const ele = document.createElement('span')
+            ele.innerHTML = (`
+            ${val[i]}
+            `)
+
+            display.append(ele);
+            display.scrollIntoView()
+            await sleep(50);
+        }
+
+        const usage = document.createElement('div')
+        usage.classList.add('usages-info');
+
+        usage.innerHTML = (`
+        <div><span>Usage : </span><span>themes set "theme-name"</span></div>
+        `)
+
+        display.append(usage)
+        display.scrollIntoView()
+        
+     })
+}
+
 
 const switchfunc = (cmd)=>{
     console.log(cmd)
@@ -354,10 +379,50 @@ const switchfunc = (cmd)=>{
                 inputVal=null;
                 break;
             default:
-
                 if(cmd.split(' ')[0] === 'echo'){
                     displaycontent(cmd.split(' ')[1])
                     inputVal=null;
+                }
+                else if(cmd.split(' ')[0] === 'themes'){
+
+                    if(cmd.split(' ')[2] === undefined){
+                        displaythemes();
+                    }
+                    else{
+                       const sty =  cmd.split(' ')[2];
+                       const r = document.querySelector(':root');
+
+                       switch(sty.toLowerCase()){
+                        case 'dark':
+                            r.style.setProperty('--main-bgcolor','#1d2a35');
+                            break;
+                        case 'ubuntu':
+                            r.style.setProperty('--main-bgcolor','#300a24');
+                            // r.style.setProperty('--terminal-prompt-1','#80d932');
+                            r.style.setProperty('--terminal-cmd-output1','floralwhite')
+                            r.style.setProperty('--terminal-cmd-output-ul1','floralwhite')
+                            r.style.setProperty('--terminal-type1','floralwhite')
+                            r.style.setProperty('--about-p1','#80d932')
+                            r.style.setProperty('--text-sh-col1','none')
+                            r.style.setProperty('--span-col1','#80d932')
+                            break;
+                        case 'dracula':
+                            r.style.setProperty('--main-bgcolor','#002b36');
+                            break;
+                        case 'default':
+                            r.style.setProperty('--main-bgcolor','#0d1117');
+                            r.style.setProperty('--terminal-prompt-1','green');
+                            r.style.setProperty('--terminal-cmd-output1','#519975')
+                            r.style.setProperty('--terminal-cmd-output-ul1','rgb(231, 159, 15)')
+                            r.style.setProperty('--terminal-type1','#dfb06e')
+                            r.style.setProperty('--about-p1','#80d932')
+                            r.style.setProperty('--text-sh-col1','#73abad')
+                            r.style.setProperty('--span-col1','#519975')
+                            break;
+                       }
+                    }
+                    
+                    console.log(cmd.split(' ')[1])
                 }
                 else
                     cmdnotfound()
